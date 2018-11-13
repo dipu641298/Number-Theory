@@ -60,7 +60,8 @@ void segmentedSieve(ll a, ll b)
 
     for(int i=0; i<prime.size() && prime[i]<=sqrtn; i++){
         ll p = prime[i];
-        ll j = ((a+p-1)/p)*p;
+        ll j = p*p;
+        if(j<a) j = ((a+p-1)/p)*p;
 
         for( ; j<=b; j+=p){
             ar[j-a] = false;
